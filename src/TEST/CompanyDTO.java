@@ -1,11 +1,9 @@
 package TEST;
 
-import java.util.Objects;
-
 public class CompanyDTO {
-///    public static ArrayList<CompanyDTO> arr = new ArrayList<CompanyDTO>();
- ///   private Scanner input = new Scanner(System.in);
     private String name, grade;
+    private int salary;
+    private double tariff;
 
     public String getName() {
         return name;
@@ -23,26 +21,26 @@ public class CompanyDTO {
         this.grade = grade;
     }
 
-    public int getSalery() {
-        int salery;
-        if (Objects.equals(this.grade, "책임"))
-            salery = 600;
-        else if (Objects.equals(this.grade, "선임"))
-            salery = 400;
+    public int getSalary() {
+        if (this.grade=="책임")
+            this.salary = 600;
+        else if (this.grade=="선임")
+            this.salary = 400;
         else
-            salery = 300;
-        return salery;
+            this.salary = 300;
+        return salary;
     }
 
+    public void setSalary(int salary) {
+    }
 
     public double getTariff() {
-        double tariff;
-        if (Objects.equals(this.grade, "책임"))
-            tariff = 0.03;
-        else if (Objects.equals(this.grade, "선임"))
-            tariff = 0.02;
+        if (this.grade=="책임")
+            this.tariff = 600;
+        else if (this.grade=="선임")
+            this.tariff = 400;
         else
-            tariff = 0.01;
+            this.tariff = 300;
         return tariff;
     }
 }

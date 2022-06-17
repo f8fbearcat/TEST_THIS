@@ -3,9 +3,10 @@ package TEST;
 import java.util.Scanner;
 
 public class MainClass {
-
     public static void main(String[] args) {
-       CompanyService sc = new CompanyServiceImpl();
+        CompanyDTO dto = new CompanyDTO();
+        String name;
+        CompanyService sc = new CompanyServiceImpl();
         Scanner input = new Scanner(System.in);
         while (true) {
             int num;
@@ -17,9 +18,9 @@ public class MainClass {
             num = input.nextInt();
             switch (num) {
                 case 1:
+                    System.out.println("------------");
                     System.out.println("사원 이름 입력");
-                    String name = input.next();
-                    CompanyDTO dto = new CompanyDTO();
+                    name = input.next();
                     dto.setName(name);
                     sc.saveWorker(dto);
                     break;
@@ -27,13 +28,14 @@ public class MainClass {
                     sc.output();
                     break;
                 case 3:
+                    System.out.println("------------");
                     System.out.println("사원 이름 입력");
                     name = input.next();
-                    dto = new CompanyDTO();
                     dto.setName(name);
                     sc.modify(dto);
                     break;
                 case 4:
+                    System.out.println("------------");
                     System.out.println("사원 이름 입력");
                     name = input.next();
                     sc.search(name);
