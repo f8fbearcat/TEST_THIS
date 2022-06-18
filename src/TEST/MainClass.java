@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 public class MainClass {
     public static void main(String[] args) {
-        CompanyDTO dto = new CompanyDTO();
-        String name;
-        CompanyService sc = new CompanyServiceImpl();
         Scanner input = new Scanner(System.in);
+        CompanyService sc = new CompanyServiceImpl();
         while (true) {
             int num;
             System.out.println("1.특정 사원 등록");
@@ -17,27 +15,25 @@ public class MainClass {
             System.out.println("5.종료");
             num = input.nextInt();
             switch (num) {
-                case 1:
+                case 1:for(;;){
+                    CompanyDTO dto = new CompanyDTO();
                     System.out.println("------------");
                     System.out.println("사원 이름 입력");
-                    name = input.next();
-                    dto.setName(name);
                     sc.saveWorker(dto);
-                    break;
+                    break;}break;
                 case 2:
                     sc.output();
                     break;
-                case 3:
+                case 3:for(;;){
+                    CompanyDTO dto = new CompanyDTO();
                     System.out.println("------------");
                     System.out.println("사원 이름 입력");
-                    name = input.next();
-                    dto.setName(name);
                     sc.modify(dto);
-                    break;
+                    break;}break;
                 case 4:
                     System.out.println("------------");
                     System.out.println("사원 이름 입력");
-                    name = input.next();
+                    String name = input.next();
                     sc.search(name);
                     break;
                 case 5:
